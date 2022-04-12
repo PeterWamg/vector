@@ -114,7 +114,8 @@ int main(int argc, char* argv[]) {
 //    assert(i[1] == 1.5);
 //    assert(i[2] == 4.0);
 
-    i = g - h;
+        i = g - h;
+
     assert(i.IsValid());
     assert(DoubleEquals(i[0], 3.0));
     assert(DoubleEquals(i[1], 0.9));
@@ -122,6 +123,39 @@ int main(int argc, char* argv[]) {
 //    assert(i[0] == 3.0);
 //    assert(i[1] == 0.9);
 //    assert(i[2] == -4.0);
+
+    Vector j(3);
+    Vector k(3);
+    j[0] = 5.0;
+    j[1] = 6.0;
+    j[2] = 7.0;
+
+    k = j*2.0;
+    assert(k.IsValid());
+    assert(DoubleEquals(k[0], 10.0));
+    assert(DoubleEquals(k[1], 12.0));
+    assert(DoubleEquals(k[2], 14.0));
+
+    Vector l(3);
+    Vector m(3);
+    l[0] = 5.0;
+    l[1] = 6.0;
+    l[2] = 7.0;
+
+    m = l.operator-();
+
+
+    assert(m.IsValid());
+    assert(DoubleEquals(m[0], -5.0));
+    assert(DoubleEquals(m[1], -6.0));
+    assert(DoubleEquals(m[2], -7.0));
+
+
+
+
+
+
+
 
     DoubleEquals(g.EuclidianDistance(h), sqrt(25.81));
     DoubleEquals(g.EuclidianDistance(g), 0);

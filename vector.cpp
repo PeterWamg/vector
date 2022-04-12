@@ -133,7 +133,25 @@ Vector Vector::operator-(const Vector &rhs) const {
         return Vector(0);
     Vector retVal(_size);
     for (size_t i = 0; i < _size; ++i) {
-        retVal._data[i] = _data[i] - rhs._data[i];
+        retVal._data[i] = _data[i]- rhs._data[i];
+    }
+    return retVal;
+}
+
+Vector Vector::operator-() const {
+
+    Vector retVal(_size);
+    for (size_t i = 0; i < _size; ++i) {
+        retVal._data[i] = _data[i] *-1.0;
+    }
+    return retVal;
+}
+
+Vector Vector::operator*(double rhs) const {
+
+    Vector retVal(_size);
+    for (size_t i = 0; i < _size; ++i) {
+        retVal._data[i] = _data[i]* rhs;
     }
     return retVal;
 }
